@@ -4,7 +4,7 @@
 
 Optionally with a [CLI](http://en.wikipedia.org/wiki/Command-line_interface).
 
-This is what I use for [my own modules](https://www.npmjs.com/~sindresorhus).
+"@abrelsfo" - This is what I use for [my own modules](https://www.npmjs.com/~abrelsfo).
 
 ![](screenshot.png)
 
@@ -12,7 +12,7 @@ This is what I use for [my own modules](https://www.npmjs.com/~sindresorhus).
 ## Install
 
 ```
-$ npm install --global generator-nm
+$ npm install --global generator-ab-nm
 ```
 
 
@@ -32,4 +32,4 @@ Use [chalk](https://github.com/sindresorhus/chalk) if you want colors in your CL
 
 ## License
 
-MIT © [Sindre Sorhus](http://sindresorhus.com)
+MIT © [abrelsfo](abrelsfo.github.io)

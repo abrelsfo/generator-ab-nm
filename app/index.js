@@ -1,14 +1,16 @@
 'use strict';
-const superb = require('superb');
 const normalizeUrl = require('normalize-url');
 const humanizeUrl = require('humanize-url');
 const yeoman = require('yeoman-generator');
 const _s = require('underscore.string');
+const fs = require('fs');
 
 module.exports = yeoman.Base.extend({
 	init() {
 		const cb = this.async();
 		const self = this;
+		const githubUsername = 'abrelsfo';
+		const website = 'abrelsfo.github.io';
 
 		this.prompt([{
 			name: 'moduleName',
@@ -16,16 +18,13 @@ module.exports = yeoman.Base.extend({
 			default: this.appname.replace(/\s/g, '-'),
 			filter: x => _s.slugify(x)
 		}, {
-			name: 'githubUsername',
-			message: 'What is your GitHub username?',
-			store: true,
-			validate: x => x.length > 0 ? true : 'You have to provide a username'
+			name: 'description',
+			message: 'What description do you want to use for your module?',
+			default: 'descrr'
 		}, {
-			name: 'website',
-			message: 'What is the URL of your website?',
-			store: true,
-			validate: x => x.length > 0 ? true : 'You have to provide a website URL',
-			filter: x => normalizeUrl(x)
+			name: 'argLength',
+			message: 'How many args do you want your main function to have',
+			default: 1
 		}, {
 			name: 'cli',
 			message: 'Do you need a CLI?',
@@ -35,13 +34,13 @@ module.exports = yeoman.Base.extend({
 			const tpl = {
 				moduleName: props.moduleName,
 				camelModuleName: _s.camelize(props.moduleName),
-				githubUsername: props.githubUsername,
+				githubUsername: githubUsername,
 				name: self.user.git.name(),
 				email: self.user.git.email(),
-				website: props.website,
+				website: website,
 				humanizedWebsite: humanizeUrl(props.website),
-				superb: superb(),
-				cli: props.cli
+				cli: props.cli,
+				argLength: props.argLength
 			};
 
 			const mv = (from, to) => {
@@ -68,6 +67,9 @@ module.exports = yeoman.Base.extend({
 	},
 	git() {
 		this.spawnCommandSync('git', ['init']);
+	},
+	gitOpen() {
+		this.spawnCommandSync('open', ['https://github.com/new']);
 	},
 	install() {
 		this.installDependencies({bower: false});

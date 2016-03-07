@@ -1,13 +1,13 @@
 {
-  "name": "generator-nm",
+  "name": "generator-ab-nm",
   "version": "2.5.0",
   "description": "Scaffold out a node module",
   "license": "MIT",
-  "repository": "sindresorhus/generator-nm",
+  "repository": "abrelsfo/generator-nm",
   "author": {
-    "name": "Sindre Sorhus",
-    "email": "sindresorhus@gmail.com",
-    "url": "sindresorhus.com"
+    "name": "Alex Brelsford",
+    "email": "alexbrelsford@gmail.com",
+    "url": "abrelsfo.github.io"
   },
   "engines": {
     "node": ">=4"
@@ -29,7 +29,7 @@
     "node_module",
     "node-module",
     "init",
-    "sindre"
+    "abrels"
   ],
   "dependencies": {
     "humanize-url": "^1.0.1",

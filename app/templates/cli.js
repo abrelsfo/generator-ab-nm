@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 'use strict';
 var meow = require('meow');
+const updateNotifier = require('update-notifier');
 var <%= camelModuleName %> = require('./');
 
 var cli = meow([
@@ -12,9 +13,9 @@ var cli = meow([
 	'',
 	'Examples',
 	'  $ <%= moduleName %>',
-	'  unicorns & rainbows',
-	'  $ <%= moduleName %> ponies',
-	'  ponies & rainbows'
+	'  shits & giggles'
 ]);
+
+updateNotifier({pkg: cli.pkg}).notify();
 
 console.log(<%= camelModuleName %>(cli.input[0] || 'unicorns'));

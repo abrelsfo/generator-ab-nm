@@ -1,7 +1,11 @@
-# <%= moduleName %> [![Build Status](https://travis-ci.org/<%= githubUsername %>/<%= moduleName %>.svg?branch=master)](https://travis-ci.org/<%= githubUsername %>/<%= moduleName %>)
+# <%= moduleName %>
+[![npm version](https://img.shields.io/npm/v/<%= moduleName %>.svg)](https://www.npmjs.com/package/<%= moduleName %>)
+[![Build Status](https://travis-ci.org/<%= githubUsername %>/<%= moduleName %>.svg?branch=master)](https://travis-ci.org/<%= githubUsername %>/<%= moduleName %>)
+[![npm download count](http://img.shields.io/npm/dm/<%= moduleName %>.svg?style=flat)](http://npmjs.org/<%= moduleName %>)
+[![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/sindresorhus/xo)
+> npm module to <%= description %>
 
-> My <%= superb %> module
-
+<br>
 
 ## Install
 
@@ -15,30 +19,23 @@ $ npm install --save <%= moduleName %>
 ```js
 const <%= camelModuleName %> = require('<%= moduleName %>');
 
-<%= camelModuleName %>('unicorns');
-//=> 'unicorns & rainbows'
+<%= camelModuleName %>('giggles');
+//=> 'shits & giggles'
 ```
 
+<br>
 
 ## API
 
-### <%= camelModuleName %>(input, [options])
+### <%= camelModuleName %>(target)
 
-#### input
+##### target
 
-Type: `string`
+Type: `string` || `Array`
 
-Lorem ipsum.
+<%= description %>
 
-#### options
-
-##### foo
-
-Type: `boolean`<br>
-Default: `false`
-
-Lorem ipsum.<% if (cli) { %>
-
+<br><% if (cli) { %>
 
 ## CLI
 
@@ -57,12 +54,12 @@ $ <%= moduleName %> --help
 
   Examples
     $ <%= moduleName %>
-    unicorns & rainbows
+    shits & giggles
     $ <%= moduleName %> ponies
-    ponies & rainbows
+    cows & rainbows
 ```<% } %>
 
 
 ## License
 
-MIT © [<%= name %>](<%= website %>)
+MIT © [Alex Brelsford](abrelsfo.github.io)

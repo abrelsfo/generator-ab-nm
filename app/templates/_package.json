@@ -1,20 +1,26 @@
 {
   "name": "<%= moduleName %>",
   "version": "0.0.0",
-  "description": "My <%= superb %> module",
+  "description": "<%= description %>",
   "license": "MIT",
   "repository": "<%= githubUsername %>/<%= moduleName %>",
   "author": {
     "name": "<%= name %>",
     "email": "<%= email %>",
     "url": "<%= humanizedWebsite %>"
-  },<% if (cli) { %>
-  "bin": "cli.js",<% } %>
+  },
+	"bugs":{
+		"url": "https://github.com/<%= hithubUsername %>/<%= moduleName %>/issues"
+	},<% if (cli) { %>
+  "bin": {
+		"<%= moduleName %>" "cli.js"
+	},<% } %>
   "engines": {
-    "node": ">=0.10.0"
+    "node": ">=5.7.0"
   },
   "scripts": {
-    "test": "xo && ava"
+    "test": "xo && ava",
+		"ava": "ava"
   },
   "files": [
     "index.js"<% if (cli) { %>,
@@ -23,10 +29,11 @@
   "keywords": [<% if (cli) { %>
     "cli-app",
     "cli",<% } %>
-    ""
+    "Alex"
   ],
   "dependencies": {<% if (cli) { %>
-    "meow": "^3.7.0"
+    "meow": "^3.7.0",
+		"update-notifier": "^0.6.1"
   <% } %>},
   "devDependencies": {
     "ava": "^0.12.0",
